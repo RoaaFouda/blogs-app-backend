@@ -5,11 +5,11 @@ import cors from "cors";
 import authRouter from "./routes/auth.routes.js";
 import connect from "./config/db.js";
 import BaseError from "./utils/errorHandlers/BaseError.js";
-import { intersection } from "zod";
 import usersRouter from "./routes/users.routes.js";
 import blogsRouter from "./routes/blogs.routes.js";
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 await connect();
 
@@ -39,6 +39,7 @@ app.use((err, req, res, next) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log("listeneing on port 3000");
+
+app.listen(PORT, () => {
+  console.log(`listeneing on port ${PORT}`);
 });

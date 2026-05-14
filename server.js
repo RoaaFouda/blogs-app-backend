@@ -11,7 +11,7 @@ import blogsRouter from "./routes/blogs.routes.js";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-//await connect();
+await connect();
 
 app.use(cors());
 app.use(morgan("dev"));

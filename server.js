@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import morgan from "morgan";
 import express from "express";
 import cors from "cors";
@@ -10,7 +11,6 @@ import blogsRouter from "./routes/blogs.routes.js";
 
 const app = express();
 
-console.log(process.env.MONGODB_URI);
 await connect();
 
 app.use(cors());
